@@ -39,7 +39,20 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 | **RL-RPL-UA (this work)**  | ✅   | ✅   | **Dynamic**        | High     | —               |
 
 
-
+## 📊 <strong> Table 2 – Key Differences Between UWF-RPL, UWMRPL, and RL-RPL-U  </strong>
+| Feature               | UWF-RPL (Tarif2025)                              | UWMRPL (Homaei2025)                               | RL-RPL-UA (This Work)                                      |
+|----------------------|--------------------------------------------------|---------------------------------------------------|-------------------------------------------------------------|
+| Main Concept          | Fuzzy-logic RPL for optimized routing           | Mobility-aware RPL with static tunable OF         | RL-based dynamic routing with local agents                  |
+| Routing Adaptability | Semi-adaptive via static fuzzy logic rules      | Semi-adaptive via predefined logic                | Fully adaptive via real-time RL updates                     |
+| OF                   | Static fuzzy logic (depth, energy, latency, ETX)| Static/custom (ETX, depth)                        | Dynamic composite (energy, LQI, queue, PDR)                 |
+| RPL Compatibility    | Extended DIO/DAO with fuzzy logic metrics       | Standard-compliant                                | Extended DIO/DAO with RL metrics                            |
+| Learning Agent       | None (static fuzzy logic)                       | None                                              | Q-learning or DQN per node                                  |
+| Reward Mechanism     | None                                            | None                                              | α·PDR − β·Delay − γ·Cost                                    |
+| Overhead             | Moderate (fuzzy logic computations)             | Low (no learning updates)                         | Low (optimized RL updates)                                  |
+| Mobility Handling    | Reactive via fuzzy logic evaluation             | Reactive DAG repair                               | Proactive via learned feedback                              |
+| Queue Management     | Included (congestion control)                   | Not included                                      | Included (adaptive queue management)                        |
+| Energy Efficiency    | Good (static optimized)                         | Moderate (no dynamic optimization)                | High (real-time optimization)                               |
+| Key Contribution     | Improved stability and efficiency via fuzzy logic | Mobility and energy-aware extension of RPL       | Online adaptive parent selection via RL                     |
 
 
 
