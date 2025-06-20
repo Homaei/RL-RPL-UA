@@ -20,6 +20,8 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 
 ## 🔍 Highlights of background
 
+<details> <summary>📊 <strong>Table 1 – Comparison of Recent Routing Protocols with RL-RPL-UA</strong></summary>
+  
 | Protocol                   | RL   | RPL   | Adaptive OF        | Mobility | Citation        |
 |----------------------------|------|-------|--------------------|----------|-----------------|
 | C-GCo-DRAR                 | ❌   | ❌   | Static OF          | Limited  | Guo2023         |
