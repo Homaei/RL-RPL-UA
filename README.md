@@ -88,6 +88,15 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 | End-to-End Delay | 10–25% reduction |
 
 ## 🧠 Protocol Architecture
+
+
+
+
+
+📘 RL-RPL-UA Routing Algorithm
+<details> <summary>Click to expand</summary>
+
+
 Algorithm: RL-Enhanced RPL Routing for Underwater IoT
 
 1. Initialize Q-table or DQN, Neighbor Table, Default Rank
@@ -123,7 +132,7 @@ Algorithm: RL-Enhanced RPL Routing for Underwater IoT
 Function observe_state():
    ├─ Measure E, LQI, Q, PDR, T
    └─ Return [E, LQI, Q, PDR, T]
-
+</details>
 
 
 
