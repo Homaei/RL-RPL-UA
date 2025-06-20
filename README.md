@@ -90,38 +90,42 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 ## 🧠 Protocol Architecture
 Algorithm: RL-Enhanced RPL Routing for Underwater IoT
 
-1.  Initialize Q-table or DQN, Neighbor Table, Default Rank
-2.  Observe initial state: s = [E, LQI, Q, PDR, T]
-3.  Broadcast DIO with OF_RL(n_i) and node state
+1. Initialize Q-table or DQN, Neighbor Table, Default Rank
+2. Observe initial state:
+       s ← [E, LQI, Q, PDR, T]
+3. Broadcast DIO with OF_RL(n_i) and node state
 
-4.  While node is active:
-    ├─  Receive DIOs from neighbors
-    ├─  For each neighbor n_i:
-    │    ├─ Extract features: s_n = [E, LQI, Q, PDR, T]
-    │    ├─ Compute OF_RL(n_i)
-    │    └─ Estimate Q(s, a = n_i)
-    ├─  Select parent:
-    │    └─ a* = argmax Q(s, a = n_i)
-    ├─  Update RPL Rank based on OF_RL(a*)
-    ├─  Forward packets to a*
-    ├─  Wait for ACK or timeout
-    ├─  Observe outcome:
-    │    ├─ Measure: PDR_t, Delay_t, EnergyCost_t
-    │    ├─ Compute reward: r_t = α·PDR − β·Delay − γ·Cost
-    │    └─ Observe next state s'
-    ├─  RL update:
-    │    ├─ If Q-learning:
-    │    │    Q(s, a) ← Q(s, a) + η · [r + γ · max_a' Q(s', a') − Q(s, a)]
-    │    └─ Else if DQN:
-    │         Store (s, a, r, s') in buffer
-    │         Train DQN via minibatch sampling
-    └─  Update: s ← s'
+4. While node is active:
+   ├─ Receive DIOs from neighbors
+   ├─ For each neighbor n_i:
+   │    ├─ Extract features: s_n ← [E, LQI, Q, PDR, T]
+   │    ├─ Compute OF_RL(n_i)
+   │    └─ Estimate Q(s, a = n_i)
+   ├─ Select parent:
+   │    └─ a* ← argmax Q(s, a = n_i)
+   ├─ Update RPL Rank based on OF_RL(a*)
+   ├─ Forward packets to a*
+   ├─ Wait for ACK or timeout
+   ├─ Observe outcome:
+   │    ├─ Measure: PDR_t, Delay_t, EnergyCost_t
+   │    ├─ Compute reward:
+   │    │     r_t ← α·PDR − β·Delay − γ·Cost
+   │    └─ Observe next state: s′
+   ├─ RL update:
+   │    ├─ If Q-learning:
+   │    │     Q(s, a) ← Q(s, a) + η · [r + γ · max Q(s′, a′) − Q(s, a)]
+   │    └─ Else if DQN:
+   │           Store (s, a, r, s′) in buffer
+   │           Train DQN using minibatch sampling
+   └─ Update current state:
+         s ← s′
 
-5.  Periodically broadcast updated DIO with new rank and OF_RL
+5. Periodically broadcast updated DIO with new Rank and OF_RL
 
 Function observe_state():
-    ├─ Measure E, LQI, Q, PDR, T
-    └─ Return [E, LQI, Q, PDR, T]
+   ├─ Measure E, LQI, Q, PDR, T
+   └─ Return [E, LQI, Q, PDR, T]
+
 
 
 
