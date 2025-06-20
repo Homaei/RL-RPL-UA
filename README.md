@@ -37,7 +37,7 @@ Each node includes:
 
 Decision process modeled as an MDP with custom reward:
 
-r_t = α × PDR_t − β × Delay_t − γ × EnergyCost_t
+![Reward function](https://latex.codecogs.com/png.image?\dpi{110}&space;r_t=\alpha\cdot\text{PDR}_t-\beta\cdot\text{Delay}_t-\gamma\cdot\text{EnergyCost}_t)
 
 ---
 
