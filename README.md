@@ -55,7 +55,26 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 | Key Contribution     | Improved stability and efficiency via fuzzy logic | Mobility and energy-aware extension of RPL       | Online adaptive parent selection via RL                     |
 
 
+## 📊 <strong>Table 3 – Simulation Parameters
 
+| Parameter                 | Value                          |
+|---------------------------|--------------------------------|
+| Simulation Area           | 300 × 300 × 300 m³             |
+| Number of Nodes           | 50                             |
+| Initial Energy per Node   | 5 J                            |
+| Transmission Power        | 0.5 W                          |
+| Acoustic Bandwidth        | 10 kHz                         |
+| Propagation Speed         | 1500 m/s                       |
+| MAC Protocol              | TDMA                           |
+| Routing Protocols         | RL-RPL-UA, RPL (OF0), Q-Routing|
+| RL Algorithm              | Q-learning (tabular)           |
+| Learning Rate (η)         | 0.1                            |
+| Discount Factor (γ)       | 0.9                            |
+| Reward Weights (α, β, γ)  | (1.0, 0.6, 0.4)                |
+| Simulation Time           | 1000 s                         |
+| Traffic Model             | CBR, 1 packet/10 s             |
+| Packet Size               | 64 Bytes                       |
+| Mobility Model            | Random Waypoint (0.1–0.3 m/s)  |
 
 
 ## 📊 Simulation Results (Aqua-Sim / NS-2)
