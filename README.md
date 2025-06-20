@@ -88,6 +88,40 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 | End-to-End Delay | 10–25% reduction |
 
 ## 🧠 Protocol Architecture
+Algorithm: RL-Enhanced RPL Routing for Underwater IoT
+
+1. Initialize Q-table or DQN, Neighbor Table, Default Rank
+2. Observe initial state s = [E, LQI, Q, PDR, T]
+3. Broadcast DIO with OF_RL(n_i) and node state
+
+4. While node is active:
+    a. Receive DIOs from neighbors
+    b. For each neighbor n_i:
+        i.   Extract features: s_n = [E, LQI, Q, PDR, T]
+        ii.  Compute OF_RL(n_i)
+        iii. Estimate Q(s, a=n_i)
+    c. Select parent:
+        a* = argmax_n Q(s, a=n)
+    d. Update RPL Rank based on OF_RL(a*)
+    e. Forward packets to selected parent a*
+    f. Wait for ACK or timeout
+    g. Observe:
+        - New PDR_t, Delay_t, EnergyCost_t
+        - Reward: r_t = α·PDR - β·Delay - γ·Cost
+        - Next state s'
+    h. RL update:
+        - If Q-learning:
+            Q(s, a) ← Q(s, a) + η [r + γ max Q(s', a') - Q(s, a)]
+        - If DQN:
+            Store (s, a, r, s') in buffer and train DQN
+    i. Set s ← s'
+
+5. Periodically broadcast updated DIO messages
+
+Function observe_state():
+    Measure E, LQI, Q, PDR, T
+    Return [E, LQI, Q, PDR, T]
+
 
 Each node includes:
 - Sensing Unit
