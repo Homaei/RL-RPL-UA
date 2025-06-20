@@ -17,6 +17,29 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 - 💡 Compatible with RPL control messages (DIO/DAO)  
 - 📊 Outperforms UWF-RPL, Co-DRAR, UA-RPL, and UWMRPL in Aqua-Sim simulations
 
+| Protocol                   | RL   | RPL   | Adaptive OF        | Mobility | Citation        |
+|----------------------------|------|-------|--------------------|----------|-----------------|
+| C-GCo-DRAR                 | ❌   | ❌   | Static OF          | Limited  | Guo2023         |
+| FLCEER                     | ❌   | ❌   | Static OF          | Moderate | Natesan2020     |
+| IDA-OEP                    | ❌   | ❌   | Static OF          | Limited  | Wang2024        |
+| GTRP                       | ❌   | ❌   | Static OF          | Moderate | Khan2021        |
+| RL Protocol                | ✅   | ❌   | Static OF          | Moderate | Eris2024        |
+| Q-Learning                 | ✅   | ❌   | Dynamic OF         | Moderate | Nandyala2023    |
+| Multi-agent RL             | ✅   | ❌   | Static OF          | High     | Li2020          |
+| UA-RPL                     | ❌   | ✅   | Static OF          | Moderate | Liu2022         |
+| URPL                       | ❌   | ✅   | Dynamic OF         | Moderate | Tarifdm2024     |
+| Fuzzy-CR                   | ❌   | ✅   | Decision Making    | Moderate | Tariffuzzy2024  |
+| UWF-RPL                    | ❌   | ✅   | Static Fuzzy OF    | Moderate | Tarif2025       |
+| UW/MRPL (prev. work)       | ❌   | ✅   | Static OF          | High     | Homaei2025      |
+| **RL-RPL-UA (this work)**  | ✅   | ✅   | **Dynamic**        | High     | —               |
+
+
+
+
+
+
+
+
 ## 📊 Simulation Results (Aqua-Sim / NS-2)
 
 | Metric | RL-RPL-UA vs Baselines |
