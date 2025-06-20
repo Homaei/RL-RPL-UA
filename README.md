@@ -17,6 +17,9 @@ The Internet of Underwater Things (IoUT) faces challenges such as high latency, 
 - 💡 Compatible with RPL control messages (DIO/DAO)  
 - 📊 Outperforms UWF-RPL, Co-DRAR, UA-RPL, and UWMRPL in Aqua-Sim simulations
 
+
+## 🔍 Highlights of background
+
 | Protocol                   | RL   | RPL   | Adaptive OF        | Mobility | Citation        |
 |----------------------------|------|-------|--------------------|----------|-----------------|
 | C-GCo-DRAR                 | ❌   | ❌   | Static OF          | Limited  | Guo2023         |
