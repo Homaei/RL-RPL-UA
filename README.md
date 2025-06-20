@@ -75,9 +75,8 @@ M. Homaei, M. Tarif, A. Di Bartolo, and M. Ávila Vegas, “A Reinforcement Lear
   year = {2025},
   copyright = {Creative Commons Attribution Share Alike 4.0 International}
 }
-
-
-
+```
+---
 ```bibtex
 @inproceedings{homaei2025rlrplua,
   author    = {Homaei, Mohammadhossein and Tarif, Mehran and Di Bartolo, Agustin and Ávila Vegas, Mar},
