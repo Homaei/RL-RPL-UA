@@ -64,6 +64,19 @@ M. Homaei, M. Tarif, A. Di Bartolo, and M. Ávila Vegas, “A Reinforcement Lear
 ---
 
 ### 📌 BibTeX
+```bibtex
+@misc{homaei2025rlrplu,
+  doi = {10.48550/ARXIV.2506.00133},
+  url = {https://arxiv.org/abs/2506.00133},
+  author = {Homaei,  Mohammadhossein and Tarif,  Mehran and Di Bartolo,  Agustin and Gutierrez, and Avila,  Mar},
+  keywords = {Networking and Internet Architecture (cs.NI),  Artificial Intelligence (cs.AI),  Machine Learning (cs.LG),  FOS: Computer and information sciences,  FOS: Computer and information sciences},
+  title = {A Reinforcement Learning-Based Telematic Routing Protocol for the Internet of Underwater Things},
+  publisher = {arXiv},
+  year = {2025},
+  copyright = {Creative Commons Attribution Share Alike 4.0 International}
+}
+
+
 
 ```bibtex
 @inproceedings{homaei2025rlrplua,
